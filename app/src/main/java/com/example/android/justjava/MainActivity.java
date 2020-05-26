@@ -19,28 +19,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    int quentity=2;
 
+    //global variable
+    int quantity=2;
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(quentity);
-        displayPrice(quentity*5);
+        display(quantity);
+        displayPrice(quantity*5);
     }
 
     public void increment(View view){
-        quentity = 3;
-        quentity = 4;
-        quentity = 5;
-        quentity = 6;
-        display(quentity);
+       quantity = quantity + 1 ;
+        display(quantity);
     }
 
     public void decrement(View view){
-        quentity = 1;
-        quentity = 2;
-        display(quentity);
+       if(quantity > 2){
+           quantity = quantity - 1;
+           display(quantity);
+       }else{
+           display(quantity);
+       }
     }
 
     /**
