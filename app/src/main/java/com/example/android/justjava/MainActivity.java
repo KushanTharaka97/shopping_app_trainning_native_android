@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //global variable
-    int quantity=2;
+    int quantity=1;
     /**
      * This method is called when the order button is clicked.
      */
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void decrement(View view){
-       if(quantity > 2){
+       if(quantity > 1){
            quantity = quantity - 1;
            display(quantity);
        }else{
