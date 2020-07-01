@@ -14,35 +14,37 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends AppCompatActivity {
 
+    //global variable
+    int quantity = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    //global variable
-    int quantity=1;
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage="Total $" + (quantity*10) ;
-        displayMessage(priceMessage);
+        //String priceMessage = "Total $" + (quantity * 10);
+        //displayMessage(priceMessage);
+        displayPrice(quantity*10);
 
     }
 
-    public void increment(View view){
-       quantity = quantity + 1 ;
+    public void increment(View view) {
+        quantity = quantity + 1;
         display(quantity);
     }
 
-    public void decrement(View view){
-       if(quantity > 1){
-           quantity = quantity - 1;
-           display(quantity);
-       }else{
-           display(quantity);
-       }
+    public void decrement(View view) {
+        if (quantity > 1) {
+            quantity = quantity - 1;
+            display(quantity);
+        } else {
+            display(quantity);
+        }
     }
 
     /**
@@ -50,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText(" " + number);
     }
-
 
     /**
      * This method displays the given price on the screen.
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
     /**
      * This method displays the given text on the screen.
      */
